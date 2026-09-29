@@ -1,82 +1,26 @@
 # Cerulean
 
-Cerulean is a highly experimental [Matrix](https://matrix.org) client intended to
-demonstrate the viability of freestyle public threaded conversations a la Twitter.
+本仓库是「Cerulean」的安卓版本获取入口，附使用资料索引。
 
-As such, it is built as simply as possible, in order to demonstrate to someone
-unfamiliar with Matrix how the Client Server API can be used in this manner.
-It has no dependencies (other than create-react-app) and has no optimisations.
-It uses a naive View+Model architecture for legibility (although ideally it'd
-grow to be MVVM in future).
+## 安装文件资源（夸克网盘）
 
-For more info, see https://matrix.org/blog/2020/12/18/introducing-cerulean
+> **Cerulean 安装文件资源（夸克网盘）**：[https://pan.quark.cn/s/ad2cf8905274](https://pan.quark.cn/s/ad2cf8905274)
 
-## Design
+## 官方项目
 
-The way Cerulean works is:
- * Messages are sent into 2 rooms: the 'user timeline' room and a 'thread' room.
-    * For instance, my user timeline room would be #@matthew:matrix.org
-    * A thread room is created for each unique post. Replies to the thread are sent into this room.
- * Messages are viewed in the context of a given 'thread' room.
-    * e.g. https://cerulean/#/@matthew:matrix.org/!cURbafjkfsMDVwdRDQ:matrix.org/$nqeHq7lJyFp4UZNlE3rN4xPVsez0vZnIcaM6SQB9waw
-      is a given message that I've sent, and that is a permalink to the message with surrounding replies.
- * User timelines are viewed in the context of a given 'user timeline' room.
-    * e.g https://cerulean/#/@matthew:matrix.org is my user timeline which has all my posts and all my replies.
- * Messages are threaded in 'thread' rooms using MSC2836.
- * Users **should** only `/join` other's timeline rooms to 'follow' them and get updates whenever they make a post/reply.
- * Users **should** only `/join` a thread room to reply to a post in that room, otherwise they should `/peek` to get a read-only view of the thread.
- * Users **should** start off as guests on their chosen homeserver, and then login if they want to post.
+- 上游项目：[matrix-org/cerulean](https://github.com/matrix-org/cerulean)
 
-Cerulean uses the following experimental [MSCs](https://matrix.org/docs/spec/proposals):
- * Threading from [MSC2836](https://github.com/matrix-org/matrix-doc/pull/2836)
- * `#@user:domain` user profile/timeline rooms from [MSC1769](https://github.com/matrix-org/matrix-doc/pull/1769)
- * peeking via `/sync` [MSC2753](https://github.com/matrix-org/matrix-doc/pull/2753) - optional
- * peeking over federation [MSC2444](https://github.com/matrix-org/matrix-doc/pull/2444) - optional
+## 更多资料
 
-## Features
+- [下载与安装教程](https://github.com/alipymanbu/Android/blob/master/%E5%AE%98%E7%BD%91%E7%89%88APP%E4%B8%8B%E8%BD%BD/Cerulean/%E4%B8%8B%E8%BD%BD%E4%B8%8E%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B.md)
+- [全屏时钟与手持弹幕怎么用](https://github.com/alipymanbu/Android/blob/master/%E5%AE%98%E7%BD%91%E7%89%88APP%E4%B8%8B%E8%BD%BD/Cerulean/%E5%85%A8%E5%B1%8F%E6%97%B6%E9%92%9F%E4%B8%8E%E6%89%8B%E6%8C%81%E5%BC%B9%E5%B9%95%E6%80%8E%E4%B9%88%E7%94%A8.md)
+- [功能清单与使用场景](https://github.com/alipymanbu/Android/blob/master/%E5%AE%98%E7%BD%91%E7%89%88APP%E4%B8%8B%E8%BD%BD/Cerulean/%E5%8A%9F%E8%83%BD%E6%B8%85%E5%8D%95%E4%B8%8E%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF.md)
+- [图片拼接与表情包制作](https://github.com/alipymanbu/Android/blob/master/%E5%AE%98%E7%BD%91%E7%89%88APP%E4%B8%8B%E8%BD%BD/Cerulean/%E5%9B%BE%E7%89%87%E6%8B%BC%E6%8E%A5%E4%B8%8E%E8%A1%A8%E6%83%85%E5%8C%85%E5%88%B6%E4%BD%9C.md)
+- [常见问题排查](https://github.com/alipymanbu/Android/blob/master/%E5%AE%98%E7%BD%91%E7%89%88APP%E4%B8%8B%E8%BD%BD/Cerulean/%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E6%8E%92%E6%9F%A5.md)
+- [来电模拟怎么用](https://github.com/alipymanbu/Android/blob/master/%E5%AE%98%E7%BD%91%E7%89%88APP%E4%B8%8B%E8%BD%BD/Cerulean/%E6%9D%A5%E7%94%B5%E6%A8%A1%E6%8B%9F%E6%80%8E%E4%B9%88%E7%94%A8.md)
+- [版本与包名差异说明](https://github.com/alipymanbu/Android/blob/master/%E5%AE%98%E7%BD%91%E7%89%88APP%E4%B8%8B%E8%BD%BD/Cerulean/%E7%89%88%E6%9C%AC%E4%B8%8E%E5%8C%85%E5%90%8D%E5%B7%AE%E5%BC%82%E8%AF%B4%E6%98%8E.md)
+- [全部软件目录](https://github.com/alipymanbu/Android/blob/master/%E5%85%A8%E9%83%A8%E8%BD%AF%E4%BB%B6%E7%9B%AE%E5%BD%95.md)
 
- * [x] User timelines
- * [x] User timelines with replies
- * [x] Individual messages with surrounding threaded conversation
- * [x] Ability to expand out threads to explore further
- * [x] Ability to display parent rather than child threads if the parent started on a different timeline
- * [x] Live updates as messages arrive (i.e. a `/sync` loop)
- * [ ] HTML messages
- * [ ] Likes
- * [ ] RTs
+---
 
-Pending serverside work:
- * [ ] Search. We don't currently have a fast search across all public rooms, but it could of course be added.
- * [ ] Hashtags. These are effectively a subset of search.
-
-This test jig could also be used for experimenting with other threaded conversation formats, e.g:
- * Mailing lists
- * Newsgroups
- * HN/Reddit style forums
-
-## To build
-
-```
-yarn install
-yarn start
-```
-
-## License
-
-All files in this repository are licensed as follows:
-
-```
-Copyright 2020 The Matrix.org Foundation C.I.C.
-
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
-```
+> 本仓库由上游项目 fork 而来，原始说明见[上游仓库](https://github.com/matrix-org/cerulean)。
